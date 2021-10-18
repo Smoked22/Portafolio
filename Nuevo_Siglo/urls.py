@@ -29,4 +29,3 @@ admin.site.site_header = 'Administrador de Restaurante'
 admin.site.index_title = 'Modulo de administración'
 admin.site.site_title = 'Siglo XXI'
 
-#Hola Soy un comentario
