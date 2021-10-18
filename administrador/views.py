@@ -13,7 +13,7 @@ def inicio(request):
     return render(request, './registration/inicio.html')
 
 def home(request):
-    return render(request, './administrador/home.html')
+    return render(request, './home.html')
 
 def acceder(request):
     #comprobar si es una peticion "POST"
@@ -32,7 +32,7 @@ def acceder(request):
             messages.add_message(request, level=messages.ERROR, message="Los datos son incorrectos")
 
     form = AuthenticationForm()
-    return render(request, "./registration/inicio.html", {"form": form})
+    return render(request, "./index.html", {"form": form})
 
 
 #def iniciar_sesion(request):

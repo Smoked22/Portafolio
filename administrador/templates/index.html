@@ -18,54 +18,42 @@
 <body class="hold-transition login-page">
   <style>
     body {
-      background-image: url("{% static 'assets/img/fondoIndex.jpg'%}");
+      background-image: url("{% static '/assets/img/fondoIndex.jpg'%}");
     }
   </style> 
 <div class="login-box">
   
 
   <div class="login-logo">
-    <img src="{% static 'assets/img/logoIndex.png'%}"/>
+    <img src="{% static '/assets/img/indexlogo.png'%}"/>
     <style>
       img {
         width: 50%;
       }
       </style>
-    <a href="../../index2.html">
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Inicia Sesión</p>
 
-      <form action="../../index3.html" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Usuario">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" >Ingresar</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+      <form method="POST" class="login" action="">
+				
+				{% csrf_token %}
+				{{ form.as_ul }}
+				{% if messages %}
+				<ul class="messages">
+				    {% for message in messages %}
+				    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				    {% endfor %}
+				</ul>
+				{% endif %}
+				
+				<button id="SingIn" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
+					Sign in <i class="zmdi zmdi-mail-send"></i>
+				</button>
+				
+			</form>
 
       
 

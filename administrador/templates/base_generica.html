@@ -96,9 +96,13 @@
         <div class="image">
           <img src="{% static '/assets/img/avatar-female.png'%}"  class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Dante Vasquez</a>
-        </div>
+          {% if user.is_authenticated %}
+					<!--<li class="text-condensedLight noLink" ><small>User Name</small></li>-->
+					<li>
+						<a href="" class=" zmdi zmdi-close btn-menu">{{ user.username }}</a>
+            <br>
+					</li>
+					{% endif%}
       </div>
 
       <!-- SidebarSearch Form -->
